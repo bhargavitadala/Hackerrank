@@ -5,6 +5,7 @@ import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
+import java.util.Scanner;  
 
 class Result {
 
@@ -16,7 +17,17 @@ class Result {
      */
 
     public static List<Integer> gradingStudents(List<Integer> grades) {
-    // Write your code here
+        List<Integer>result=new ArrayList<>();
+        for(Integer val:grades){
+            if(val<38)
+                result.add(val);
+            else if (val%5<=2)
+                result.add(val);
+            else
+                result.add(val+(5-val%5));
+        }
+        return result;
+
 
     }
 
